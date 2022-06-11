@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: fallback;
+    src: url('../public/fonts/Jost-VariableFont_wght.woff2') format('woff2');
+}

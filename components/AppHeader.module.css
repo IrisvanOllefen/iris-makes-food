@@ -1,0 +1,19 @@
+.body {
+    background-color: var(--outstanding-color);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+}
+
+.body h1 {
+    font-size: 3.8rem;
+    padding: 1rem;
+}
+
+.body ul {
+    display: flex;
+}
+
+.body ul li {
+    padding: 0.75rem;
+}

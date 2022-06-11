@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.logo-box {
+    background-color: var(--outstanding-color);
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 50%;
+    margin: 0 1rem;
+}
+
+.logo svg {
+    color: var(--dark-accent);
+    width: 3rem;
+}

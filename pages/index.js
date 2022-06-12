@@ -1,12 +1,29 @@
 import Head from 'next/head'
+import { request } from '../lib/datocms'
 
 import AppHeader from '../components/AppHeader'
-import PostComponent from '../components/PostComponent'
+import NewestPostsBlock from '../components/NewestPostsBlock'
 import AppFooter from '../components/AppFooter'
 import Socials from '../components/Socials'
 import Copyright from '../components/Copyright'
 
-export default function Home() {
+const HOMEPAGE_QUERY = `query HomePage {
+  test {
+    test
+  }
+}`
+
+export async function getStaticProps() {
+  const data = await request({
+    query: HOMEPAGE_QUERY,
+  })
+  return {
+    props: { data },
+  }
+}
+
+export default function Home({ data }) {
+  console.log(data)
   return (
     <div>
       <Head>
@@ -18,7 +35,7 @@ export default function Home() {
       <AppHeader />
 
       <main>
-        <PostComponent />
+        <NewestPostsBlock />
       </main>
 
       <AppFooter />

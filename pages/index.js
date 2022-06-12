@@ -35,6 +35,7 @@ export default function Home({ data }) {
       <AppHeader />
 
       <main>
+        <h1>hi, testing</h1>
         <NewestPostsBlock />
       </main>
 

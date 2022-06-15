@@ -1,7 +1,23 @@
 @font-face {
-    font-family: 'Jost', sans-serif;
+    font-family: 'Abril Fatface', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-display: fallback;
+    src: url('../public/fonts/AbrilFatface-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Urbanist', sans-serif;
     font-style: normal;
     font-weight: 100 900;
     font-display: fallback;
-    src: url('../public/fonts/Jost-VariableFont_wght.woff2') format('woff2');
+    src: url('../public/fonts/Urbanist-VariableFont_wght.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Urbanist', sans-serif;
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: fallback;
+    src: url('../public/fonts/Urbanist-Italic-VariableFont_wght.woff2') format('woff2');
 }

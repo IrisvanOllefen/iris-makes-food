@@ -5,7 +5,7 @@
 }
 
 .logo-box {
-    background-color: var(--outstanding-color);
+    background-color: var(--medium-accent);
     width: fit-content;
     height: fit-content;
     padding: 1rem;
@@ -14,6 +14,6 @@
 }
 
 .logo svg {
-    color: var(--dark-accent);
+    color: var(--brown-accent);
     width: 3rem;
 }

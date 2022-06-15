@@ -1,8 +1,10 @@
 :root {
     --outstanding-color: #DBF7E9;
-    --lightest-accent: #f2fff9; 
+    --lightest-accent: #f7f3e044; 
     --light-accent: #72C29B;
     --dark-accent: #45755E;
-    --black: #3f4844;
+    --brown-accent: #ae887b;
+    --medium-accent: #f0ded0;
+    --black: rgb(39, 39, 39);
     --box-shadow: 0px -1px 10px lightgray;
 }

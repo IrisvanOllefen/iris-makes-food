@@ -1,0 +1,44 @@
+.container {
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.container h1 {
+    font-size: 5rem;
+    text-align: center;
+    padding: 2rem 0rem;
+}
+
+.container h2 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 6rem 0 0;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.container h3 {
+    font-size: 2rem;
+    color: var(--brown-accent);
+    font-weight: 900;
+    text-align: center;
+}
+
+.listblock {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.listblock h4 {
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.listblock ul {
+    font-size: 1.8rem;
+    padding: 1rem 4rem;
+    line-height: 2;
+    list-style-type: square;
+}

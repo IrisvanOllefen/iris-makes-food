@@ -1,5 +1,5 @@
 body {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Urbanist', sans-serif;
 }
 
 h1 {
@@ -35,4 +35,12 @@ h6 {
 p {
   font-style: normal;
   font-size: 1.6rem;
+}
+
+.abril-fatface {
+  font-family: 'Abril Fatface', cursive;
+}
+
+.cursive {
+  font-style: cursive;
 }

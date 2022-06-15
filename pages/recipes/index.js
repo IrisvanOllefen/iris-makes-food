@@ -1,11 +1,12 @@
-import { request } from '../lib/datocms'
+import RecipePage from '../../components/RecipePage'
 
-import NewestPostsBlock from '../components/NewestPostsBlock'
+import { request } from '../../lib/datocms'
 
 const HOMEPAGE_QUERY = `query Query {
   allPosts {
     recipeName
     slug
+    datePublished
     recipeCategory {
       tagstitle
     }
@@ -26,10 +27,17 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ data }) {
+export default function RecipesHome({ data }) {
   return (
-    <>
-      <NewestPostsBlock data={data.allPosts} />
-    </>
+    <div>
+      {data.allPosts.map((thing) => {
+        return (
+          <div key={thing}>
+            <h1> hi</h1>
+          </div>
+        )
+      })}
+      <RecipePage data={data} />
+    </div>
   )
 }

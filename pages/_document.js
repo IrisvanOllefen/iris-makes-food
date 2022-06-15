@@ -6,8 +6,16 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* <link
+            href='https://fonts.googleapis.com/css2?family=Poppins&display=swap'
+            rel='stylesheet'
+          /> */}
           <link
-            href='https://fonts.googleapis.com/css2?family=Jost&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap'
+            rel='stylesheet'
+          />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Urbanist:ital@0;1&display=swap'
             rel='stylesheet'
           />
         </Head>

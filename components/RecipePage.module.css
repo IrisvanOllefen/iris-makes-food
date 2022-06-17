@@ -24,6 +24,12 @@
     text-align: center;
 }
 
+.main-image {
+    width: 60%;
+    margin: 0 auto;
+    padding: 3rem 0 2rem;
+}
+
 .listblock {
     margin: 2rem;
     display: flex;
@@ -36,9 +42,16 @@
     padding: 2rem;
 }
 
-.listblock ul {
+.listblock ul, .listblock ol {
     font-size: 1.8rem;
     padding: 1rem 4rem;
     line-height: 2;
+}
+
+.listblock ul {
     list-style-type: square;
+}
+
+.listblock ol {
+    list-style-type: decimal;
 }

@@ -21,6 +21,9 @@ function POST_QUERY(slug) {
       mainRecipePicture {
         responsiveImage(imgixParams: {fit: crop}) {
           srcSet
+          alt
+          width
+          height
         }
       }
       content {

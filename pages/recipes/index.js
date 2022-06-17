@@ -30,14 +30,14 @@ export async function getStaticProps() {
 export default function RecipesHome({ data }) {
   return (
     <div>
-      {data.allPosts.map((thing) => {
+      {/* {data.allPosts.map((thing) => {
         return (
           <div key={thing}>
             <h1> hi</h1>
           </div>
         )
-      })}
-      <RecipePage data={data} />
+      })} */}
+      {/* <RecipePage data={data} /> */}
     </div>
   )
 }

@@ -1,10 +1,9 @@
 import Image from 'next/image'
+import { StructuredText } from 'react-datocms'
 
-import styles from './RecipePage.module.css'
+import styles from './RecipeComponent.module.css'
 
 export default function RecipePage({ data }) {
-  console.log(data.mainRecipePicture.responsiveImage.width)
-
   return (
     <div className={styles.container}>
       <h2>{Object.values(data.recipeCategory)}</h2>
@@ -13,12 +12,9 @@ export default function RecipePage({ data }) {
       <div className={styles['main-image']}>
         <Image
           src={data.mainRecipePicture.responsiveImage.srcSet}
-          // width={200}
           width={data.mainRecipePicture.responsiveImage.width}
-          // height={300}
           height={data.mainRecipePicture.responsiveImage.height}
           alt={data.mainRecipePicture.responsiveImage.alt}
-          // layout='fit'
         />
       </div>
       <div>
@@ -26,7 +22,11 @@ export default function RecipePage({ data }) {
           return (
             <div key={content.id}>
               <div>
-                {content.__typename === 'IngredientslistRecord' ? (
+                {content.__typename === 'ParagraphRecord' ? (
+                  <div className={styles.paragraphblock}>
+                    <StructuredText data={content.paragraph} />
+                  </div>
+                ) : content.__typename === 'IngredientslistRecord' ? (
                   <div key={content.id} className={styles.listblock}>
                     <h4 className='abril-fatface'>Ingredients</h4>
                     <ul>

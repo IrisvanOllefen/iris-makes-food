@@ -1,43 +1,40 @@
-import RecipePage from '../../components/RecipePage'
+import PostCollection from '../../components/PostCollection'
 
 import { request } from '../../lib/datocms'
 
-const HOMEPAGE_QUERY = `query Query {
-  allPosts {
-    recipeName
-    slug
-    datePublished
-    recipeCategory {
-      tagstitle
-    }
-    mainRecipePicture {
-      responsiveImage(imgixParams: {fit: crop}) {
-        srcSet
+function COLLECTION_QUERY(CollectionId) {
+  return `query Query {
+    allPostcollections(filter: {id: {eq: "${CollectionId}" }}) {
+      id
+      collectiontitle
+      postcollection {
+        id
+        mainRecipePicture {
+          responsiveImage(imgixParams: {fit: crop}) {
+            srcSet
+          }
+        }
+        recipeCategory {
+          tagstitle
+        }
+        slug
+        recipeName
       }
     }
-  }
-}`
+  }`
+}
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await request({
-    query: HOMEPAGE_QUERY,
+    query: COLLECTION_QUERY(26973849),
   })
-  return {
-    props: { data },
-  }
+  return { props: { data } }
 }
 
 export default function RecipesHome({ data }) {
   return (
     <div>
-      {/* {data.allPosts.map((thing) => {
-        return (
-          <div key={thing}>
-            <h1> hi</h1>
-          </div>
-        )
-      })} */}
-      {/* <RecipePage data={data} /> */}
+      <PostCollection data={data} />
     </div>
   )
 }

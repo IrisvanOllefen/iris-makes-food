@@ -1,7 +1,6 @@
 import { request } from '../../lib/datocms'
-import { StructuredText } from 'react-datocms'
 
-import RecipePage from '../../components/RecipePage'
+import RecipeComponent from '../../components/RecipeComponent'
 
 const ALL_POSTS_QUERY = `query Query {
   allPosts {
@@ -41,6 +40,13 @@ function POST_QUERY(slug) {
             instructionsitem
           }
         }
+        __typename
+        ... on ParagraphRecord {
+          id
+          paragraph {
+            value
+        }
+      }
       }
     } 
   }`
@@ -73,7 +79,7 @@ export async function getStaticProps({ params }) {
 export default function SingleRecipe({ data }) {
   return (
     <div>
-      <RecipePage data={data.post} />
+      <RecipeComponent data={data.post} />
     </div>
   )
 }

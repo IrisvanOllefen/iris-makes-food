@@ -1,20 +1,38 @@
 import { request } from '../lib/datocms'
 
-import NewestPostsBlock from '../components/NewestPostsBlock'
+import PostCollection from '../components/PostCollection'
+import AboutComponent from '../components/AboutComponent'
 
 const HOMEPAGE_QUERY = `query Query {
-  allPosts {
-    recipeName
-    slug
-    recipeCategory {
-      tagstitle
-    }
-    mainRecipePicture {
-      responsiveImage(imgixParams: {fit: crop}) {
-        srcSet
+  allPostcollections(filter: {id: {eq: 26973831}}) {
+    id
+    collectiontitle
+    postcollection {
+      id
+      mainRecipePicture {
+        responsiveImage(imgixParams: {fit: crop}) {
+          srcSet
+        }
       }
+      recipeCategory {
+        tagstitle
+      }
+      slug
+      recipeName
     }
   }
+  about {
+    name
+    welcome
+    paragraph
+    profilepicture {
+      responsiveImage {
+        srcSet
+        width
+        height
+      }
+    }
+  }  
 }`
 
 export async function getStaticProps() {
@@ -29,7 +47,8 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   return (
     <>
-      <NewestPostsBlock data={data.allPosts} />
+      <PostCollection data={data} />
+      <AboutComponent data={data.about} />
     </>
   )
 }

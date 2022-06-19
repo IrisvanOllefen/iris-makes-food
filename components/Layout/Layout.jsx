@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
-import AppHeader from './AppHeader'
-import Socials from './Socials'
-import Copyright from './Copyright'
+import AppHeader from '../AppHeader'
+import Socials from '../Socials'
+import Copyright from '../Copyright'
 
 export default function Layout({ children }) {
   return (

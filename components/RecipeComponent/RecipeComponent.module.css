@@ -30,6 +30,10 @@
     padding: 3rem 0 2rem;
 }
 
+.paragraphblock {
+    margin: 3.5rem;
+}
+
 .listblock {
     margin: 2rem;
     display: flex;

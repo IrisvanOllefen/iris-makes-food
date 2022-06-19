@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Link from 'next/link'
 
-import Pinterest from './icons/pinterest'
-import Instagram from './icons/instagram'
-import Twitter from './icons/twitter'
-import YouTube from './icons/youtube'
+import Pinterest from '../icons/pinterest'
+import Instagram from '../icons/instagram'
+import Twitter from '../icons/twitter'
+import YouTube from '../icons/youtube'
 
 import styles from './Socials.module.css'
 

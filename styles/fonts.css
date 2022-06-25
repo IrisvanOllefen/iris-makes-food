@@ -21,3 +21,19 @@
     font-display: fallback;
     src: url('../public/fonts/Urbanist-Italic-VariableFont_wght.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'Literata', serif;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: fallback;
+    src: url('../public/fonts/Literata-VariableFont_opsz\,wght.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Literata', serif;
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: fallback;
+    src: url('../public/fonts/Literata-Italic-VariableFont_opsz\,wght.woff2') format('woff2')
+}

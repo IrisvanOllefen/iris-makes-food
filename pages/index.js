@@ -1,25 +1,25 @@
+import Link from 'next/link'
+
 import { request } from '../lib/datocms'
 
-import PostCollection from '../components/PostCollection'
+import NewestPostsCollection from '../components/NewestPostsCollection'
+import TopCategories from '../components/TopCategories'
+import ButtonComponent from '../components/ButtonComponent'
 import AboutComponent from '../components/AboutComponent'
 
-const HOMEPAGE_QUERY = `query Query {
-  allPostcollections(filter: {id: {eq: 26973831}}) {
+const HOMEPAGE_QUERY = ` query Query {
+  allPosts(first: "6", orderBy: _publishedAt_ASC) {
     id
-    collectiontitle
-    postcollection {
-      id
-      mainRecipePicture {
-        responsiveImage(imgixParams: {fit: crop}) {
-          srcSet
-        }
-      }
-      recipeCategory {
-        tagstitle
-      }
-      slug
-      recipeName
+    recipeCategory {
+      tagstitle
     }
+    mainRecipePicture {
+      responsiveImage(imgixParams: {fit: crop}) {
+        srcSet
+      }
+    }
+    recipeName
+    slug
   }
   about {
     name
@@ -32,7 +32,12 @@ const HOMEPAGE_QUERY = `query Query {
         height
       }
     }
-  }  
+  }
+  allTagscollections(first: "4") {
+    id
+    slug
+    tagstitle
+  }
 }`
 
 export async function getStaticProps() {
@@ -47,7 +52,9 @@ export async function getStaticProps() {
 export default function Home({ data }) {
   return (
     <>
-      <PostCollection data={data} />
+      <NewestPostsCollection data={data.allPosts} />
+      {/* search for a recipe */}
+      <TopCategories data={data.allTagscollections} />
       <AboutComponent data={data.about} />
     </>
   )

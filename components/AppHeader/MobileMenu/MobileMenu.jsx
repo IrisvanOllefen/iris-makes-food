@@ -11,6 +11,11 @@ export default function MobileMenu() {
         </Link>
       </li>
       <li>
+        <Link href='/categories'>
+          <a>Categories</a>
+        </Link>
+      </li>
+      <li>
         <Link href='/about'>
           <a>About</a>
         </Link>

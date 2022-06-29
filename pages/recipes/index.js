@@ -1,40 +1,37 @@
-import PostCollection from '../../components/PostCollection'
+import NewestPostsCollection from '../../components/NewestPostsCollection'
 
 import { request } from '../../lib/datocms'
 
-function COLLECTION_QUERY(CollectionId) {
-  return `query Query {
-    allPostcollections(filter: {id: {eq: "${CollectionId}" }}) {
-      id
-      collectiontitle
-      postcollection {
-        id
-        mainRecipePicture {
-          responsiveImage(imgixParams: {fit: crop}) {
-            srcSet
-          }
-        }
-        recipeCategory {
-          tagstitle
-        }
-        slug
-        recipeName
+const CATEGORY_QUERY = `query Query {
+  allPosts(first: "6", orderBy: _publishedAt_ASC) {
+    id
+    recipeCategory {
+      tagstitle
+    }
+    mainRecipePicture {
+      responsiveImage(imgixParams: {fit: crop}) {
+        srcSet
       }
     }
-  }`
+    recipeName
+    slug
+  }
 }
+`
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const data = await request({
-    query: COLLECTION_QUERY(26973849),
+    query: CATEGORY_QUERY,
   })
-  return { props: { data } }
+  return {
+    props: { data },
+  }
 }
 
 export default function RecipesHome({ data }) {
   return (
     <div>
-      <PostCollection data={data} />
+      <NewestPostsCollection data={data.allPosts} />
     </div>
   )
 }

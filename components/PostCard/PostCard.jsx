@@ -17,8 +17,8 @@ export default function PostCard({ data }) {
                   width='250'
                   height='250'
                 />
-                <h2>{Object.values(item.recipeCategory)}</h2>
-                <h3 className={'abril-fatface'}>{item.recipeName}</h3>
+                <h2 className='tags'>{Object.values(item.recipeCategory)}</h2>
+                <h3 className='collection-post-title'>{item.recipeName}</h3>
               </a>
             </Link>
           </li>

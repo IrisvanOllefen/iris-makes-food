@@ -20,7 +20,6 @@ export default function MobileMenu() {
           <a>About</a>
         </Link>
       </li>
-      <li>Search</li>
     </ul>
   )
 }

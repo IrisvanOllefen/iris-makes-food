@@ -16,14 +16,16 @@ export default function AboutComponent({ data }) {
           />
         </div>
         <div className={styles.titles}>
-          <h1 className='abril-fatface'>{data.name}</h1>
-          <h2>{data.welcome}</h2>
+          <h1>{data.name}</h1>
+          <h2 className='subtitle'>{data.welcome}</h2>
         </div>
       </div>
       <p>{data.paragraph}</p>
-      <Link href='/about'>
-        <a className={styles.link}>More about me</a>
-      </Link>
+      <section className={styles.link}>
+        <Link href='/about'>
+          <a className='button'>More about me</a>
+        </Link>
+      </section>
     </div>
   )
 }

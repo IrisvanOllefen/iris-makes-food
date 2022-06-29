@@ -1,3 +1,5 @@
+import PostCard from '../../components/PostCard'
+
 import { request } from '../../lib/datocms'
 
 const ALL_TAGS_QUERY = ` query Query {
@@ -69,6 +71,7 @@ export default function SingleRecipe({ tagData, postsData }) {
           </article>
         )
       })}
+      <PostCard data={postsData} />
     </div>
   )
 }

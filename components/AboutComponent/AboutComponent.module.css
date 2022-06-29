@@ -1,44 +1,22 @@
 .wrapper {
+    background-color: var(--light-grey);
+    padding: 4rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 4rem;
-    background-color: var(--medium-accent);
-    align-items: center;
-}
-
-.wrapper h1 {
-    font-size: 4rem;
-    padding: 4rem 0 2rem;
 }
 
 .wrapper h2 {
-    font-size: 3rem;
-    line-height: 1.2;
-    padding: 0 0 3rem;
+    width: 70vw;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
 }
 
 .image {
-    width: 70vw;
     margin: 0 auto;
-    padding: 8rem 0 2rem;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.wrapper p {
-    font-size: 1.9rem;
-    text-align: center;
+    padding: 4rem 0 2rem;
 }
 
 .link {
-    background-color: var(--brown-accent);
-    width: fit-content;
-    padding: 1.5rem;
-    font-size: 1.9rem;
-    margin: 3rem 0 0;
-    border-radius: 1rem;
+    margin: 6rem 0 4rem;
 }

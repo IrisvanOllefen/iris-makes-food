@@ -1,8 +1,7 @@
 import Head from 'next/head'
 
 import AppHeader from '../AppHeader'
-import Socials from '../Socials'
-import Copyright from '../Copyright'
+import AppFooter from '../AppFooter'
 
 export default function Layout({ children }) {
   return (
@@ -15,9 +14,8 @@ export default function Layout({ children }) {
       <main>
         <AppHeader />
         <main>{children}</main>
-        <Socials />
-        <Copyright />
       </main>
+      <AppFooter />
     </>
   )
 }

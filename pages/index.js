@@ -53,8 +53,10 @@ export default function Home({ data }) {
   return (
     <>
       <NewestPostsCollection data={data.allPosts} />
-      {/* search for a recipe */}
       <TopCategories data={data.allTagscollections} />
+      {/* weekend baking top 3 */}
+      {/* weeknight dinners top 3 */}
+      {/* all out dinners top 3*/}
       <AboutComponent data={data.about} />
     </>
   )

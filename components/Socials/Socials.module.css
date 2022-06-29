@@ -5,15 +5,9 @@
 }
 
 .logo-box {
-    background-color: var(--medium-accent);
-    width: 5rem;
-    height: 5rem;
-    padding: 1rem;
-    border-radius: 50%;
-    margin: 0 1rem;
+    padding: 0 1rem;
 }
 
 .logo svg {
-    color: var(--brown-accent);
-    width: 3rem;
+    width: 2.5rem;
 }

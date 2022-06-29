@@ -1,0 +1,7 @@
+.line {
+    width: 80vw;
+    height: 1px;
+    background-color: rgb(233, 233, 233);
+    margin: 0.25rem auto;
+    display: flex;
+}

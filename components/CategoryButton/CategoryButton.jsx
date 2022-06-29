@@ -7,7 +7,7 @@ export default function CategoryButton({ data }) {
     <ul className={styles.container}>
       {data.map((item) => {
         return (
-          <li key={item.tagstitle} className={styles.button}>
+          <li key={item.tagstitle} className='button'>
             <Link href={`/categories/${item.slug}`}>
               <a>{item.tagstitle}</a>
             </Link>

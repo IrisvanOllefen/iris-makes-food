@@ -7,6 +7,8 @@ import Close from '../icons/close'
 import Menu from '../icons/menu'
 import Search from '../icons/search'
 
+import Line from '../Line'
+
 import MobileMenu from './MobileMenu'
 
 export default function AppHeader() {
@@ -17,9 +19,10 @@ export default function AppHeader() {
       <header className={styles.header}>
         <Link href='/'>
           <a>
-            <h1 className='abril-fatface'>Iris Makes Food</h1>
+            <h1 className='logo'>Iris Makes Food</h1>
           </a>
         </Link>
+        <span></span>
         <ul>
           <li>
             <Search />
@@ -39,7 +42,12 @@ export default function AppHeader() {
           )}
         </ul>
       </header>
-      {open ? <MobileMenu /> : null}
+      <Line />
+      {open ? (
+        <>
+          <MobileMenu /> <Line />
+        </>
+      ) : null}
     </>
   )
 }

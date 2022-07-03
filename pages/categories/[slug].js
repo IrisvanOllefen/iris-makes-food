@@ -69,17 +69,9 @@ export async function getStaticProps({ params }) {
 }
 
 export default function SingleRecipe({ tagData, postsData }) {
-  // console.log(postsData)
   return (
     <div>
       <h1>{tagData.tagstitle}</h1>
-      {postsData.map((post) => {
-        return (
-          <article key={post.recipeName}>
-            <h2>{post.recipeName}</h2>
-          </article>
-        )
-      })}
       <PostCard data={postsData} />
     </div>
   )

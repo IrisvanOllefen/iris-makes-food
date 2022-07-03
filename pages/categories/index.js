@@ -22,6 +22,7 @@ export async function getStaticProps() {
 }
 
 export default function CategoriesHome({ data }) {
+  console.log(data)
   return (
     <div>
       <CategoryButton data={data.allTagscollections} />

@@ -1,37 +1,73 @@
-import NewestPostsCollection from '../../components/NewestPostsCollection'
+import AllPostsCollection from '../../components/AllPostsCollection'
+import Search from '../../components/SearchComponent'
 
 import { request } from '../../lib/datocms'
 
-const CATEGORY_QUERY = `query Query {
-  allPosts(first: "6", orderBy: _publishedAt_ASC) {
-    id
-    recipeCategory {
-      tagstitle
-    }
-    mainRecipePicture {
-      responsiveImage(imgixParams: {fit: crop}) {
-        srcSet
+function queryForAll() {
+  return `
+  query SearchQuery {
+    allPosts {
+      id
+      recipeCategory {
+        tagstitle
       }
+      mainRecipePicture {
+        responsiveImage(imgixParams: {fit: crop}) {
+          srcSet
+        }
+      }
+      recipeName
+      slug
     }
-    recipeName
-    slug
   }
+  `
 }
-`
 
-export async function getStaticProps() {
+function queryForSearching(searchingValue) {
+  return `
+  query SearchQuery {
+    allPosts(filter: {
+      recipeName: {
+        matches: {
+          pattern: "${searchingValue}"
+        }
+      }
+    }) {
+      id
+      recipeCategory {
+        tagstitle
+      }
+      mainRecipePicture {
+        responsiveImage(imgixParams: {fit: crop}) {
+          srcSet
+        }
+      }
+      recipeName
+      slug
+    }
+  }
+  `
+}
+
+export async function getServerSideProps(context) {
   const data = await request({
-    query: CATEGORY_QUERY,
+    query: context.query.search
+      ? queryForSearching(context.query.search)
+      : queryForAll(),
   })
+
   return {
-    props: { data },
+    props: {
+      data,
+    },
   }
 }
 
 export default function RecipesHome({ data }) {
   return (
     <div>
-      <NewestPostsCollection data={data.allPosts} />
+      <Search />
+      <AllPostsCollection data={data.allPosts} />
     </div>
   )
 }

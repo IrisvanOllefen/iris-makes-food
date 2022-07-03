@@ -5,12 +5,9 @@ import Image from 'next/image'
 import styles from './PostCard.module.css'
 
 export default function PostCard({ data }) {
-  console.log(data)
-
   return (
     <ul className={styles.container}>
       {data.map((item) => {
-        console.log(item)
         return (
           <li key={item.recipeName}>
             <Link href={`/recipes/${item.slug}`}>

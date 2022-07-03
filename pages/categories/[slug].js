@@ -23,6 +23,14 @@ function POSTS_BY_CATEGORY_QUERY(categoryId) {
     allPosts(filter: {recipeCategory: {eq: "${categoryId}"}}) {
       recipeName
       slug
+      mainRecipePicture {
+        responsiveImage(imgixParams: {fit: crop}) {
+          srcSet
+        }
+      }
+      recipeCategory {
+        tagstitle
+      }
     }
   }`
 }
@@ -61,6 +69,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function SingleRecipe({ tagData, postsData }) {
+  // console.log(postsData)
   return (
     <div>
       <h1>{tagData.tagstitle}</h1>

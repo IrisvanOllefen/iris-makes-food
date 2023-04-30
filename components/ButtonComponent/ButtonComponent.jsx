@@ -6,8 +6,8 @@ export default function ButtonComponent({ title, link }) {
   return (
     <div className={styles.container}>
       <Link href={`/${link}`}>
-        <a>{title}</a>
+        {title}
       </Link>
     </div>
-  )
+  );
 }

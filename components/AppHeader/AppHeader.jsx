@@ -14,40 +14,38 @@ import MobileMenu from './MobileMenu'
 export default function AppHeader() {
   const [open, setOpen] = useState(false)
 
-  return (
-    <>
-      <header className={styles.header}>
-        <Link href='/'>
-          <a>
-            <h1 className='logo'>Iris Makes Food</h1>
-          </a>
-        </Link>
-        <span></span>
-        <ul>
-          <li>
-            <Search />
+  return <>
+    <header className={styles.header}>
+      <Link href='/'>
+
+        <h1 className='logo'>Iris Makes Food</h1>
+
+      </Link>
+      <span></span>
+      <ul>
+        <li>
+          <Search />
+        </li>
+        {open ? (
+          <li className={styles['open-menu']}>
+            <button onClick={() => setOpen(false)}>
+              <Close />
+            </button>
           </li>
-          {open ? (
-            <li className={styles['open-menu']}>
-              <button onClick={() => setOpen(false)}>
-                <Close />
-              </button>
-            </li>
-          ) : (
-            <li className={styles['closed-menu']}>
-              <button onClick={() => setOpen(true)}>
-                <Menu />
-              </button>
-            </li>
-          )}
-        </ul>
-      </header>
-      <Line />
-      {open ? (
-        <>
-          <MobileMenu /> <Line />
-        </>
-      ) : null}
-    </>
-  )
+        ) : (
+          <li className={styles['closed-menu']}>
+            <button onClick={() => setOpen(true)}>
+              <Menu />
+            </button>
+          </li>
+        )}
+      </ul>
+    </header>
+    <Line />
+    {open ? (
+      <>
+        <MobileMenu /> <Line />
+      </>
+    ) : null}
+  </>;
 }

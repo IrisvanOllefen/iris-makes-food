@@ -22,10 +22,10 @@ export default function AboutComponent({ data }) {
       </div>
       <p>{data.paragraph}</p>
       <section className={styles.link}>
-        <Link href='/about'>
-          <a className='button'>More about me</a>
+        <Link href='/about' className='button'>
+          More about me
         </Link>
       </section>
     </div>
-  )
+  );
 }

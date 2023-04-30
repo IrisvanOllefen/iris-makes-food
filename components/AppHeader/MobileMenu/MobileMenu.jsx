@@ -7,19 +7,19 @@ export default function MobileMenu() {
     <ul className={styles.container}>
       <li>
         <Link href='/recipes'>
-          <a>Recipes</a>
+          Recipes
         </Link>
       </li>
       <li>
         <Link href='/categories'>
-          <a>Categories</a>
+          Categories
         </Link>
       </li>
       <li>
         <Link href='/about'>
-          <a>About</a>
+          About
         </Link>
       </li>
     </ul>
-  )
+  );
 }

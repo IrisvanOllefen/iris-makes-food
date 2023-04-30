@@ -8,16 +8,16 @@ export default function Copyright() {
       <ul>
         <li>
           <Link href='/'>
-            <a>Privacy Policy</a>
+            Privacy Policy
           </Link>
         </li>
         <li>
           <Link href='/'>
-            <a>Terms of Use</a>
+            Terms of Use
           </Link>
         </li>
       </ul>
       <p>© 2022 Iris van Ollefen. All Rights Reserved. </p>
     </div>
-  )
+  );
 }

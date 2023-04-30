@@ -13,34 +13,34 @@ export default function Socials() {
     <div>
       <ul className={styles.container}>
         <li className={styles['logo-box']}>
-          <Link href='/'>
-            <a className={styles.logo}>
-              <Pinterest />
-            </a>
+          <Link href='/' className={styles.logo}>
+
+            <Pinterest />
+
           </Link>
         </li>
         <li className={styles['logo-box']}>
-          <Link href='/'>
-            <a className={styles.logo}>
-              <Instagram />
-            </a>
+          <Link href='/' className={styles.logo}>
+
+            <Instagram />
+
           </Link>
         </li>
         <li className={styles['logo-box']}>
-          <Link href='/'>
-            <a className={styles.logo}>
-              <Twitter />
-            </a>
+          <Link href='/' className={styles.logo}>
+
+            <Twitter />
+
           </Link>
         </li>
         <li className={styles['logo-box']}>
-          <Link href='/'>
-            <a className={styles.logo}>
-              <YouTube />
-            </a>
+          <Link href='/' className={styles.logo}>
+
+            <YouTube />
+
           </Link>
         </li>
       </ul>
     </div>
-  )
+  );
 }

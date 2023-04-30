@@ -9,11 +9,11 @@ export default function CategoryButton({ data }) {
         return (
           <li key={item.tagstitle} className='button'>
             <Link href={`/categories/${item.slug}`}>
-              <a>{item.tagstitle}</a>
+              {item.tagstitle}
             </Link>
           </li>
-        )
+        );
       })}
     </ul>
-  )
+  );
 }

@@ -25,7 +25,6 @@ export async function getStaticProps() {
 }
 
 export default function AboutMe({ data }) {
-  console.log(data.about.name)
   return (
     <div>
       <h1>{data.about.name}</h1>

@@ -61,8 +61,6 @@ export async function getStaticProps({ params }) {
   })
 
   const postsData = postsResult.allPosts
-
-  console.log(postsData)
   return {
     props: { tagData, postsData },
   }

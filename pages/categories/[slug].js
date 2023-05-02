@@ -1,4 +1,4 @@
-import PostCard from '../../components/PostCard'
+// import PostCard from '../../components/PostCard'
 
 import { request } from '../../lib/datocms'
 
@@ -70,7 +70,7 @@ export default function SingleRecipe({ tagData, postsData }) {
   return (
     <div>
       <h1>{tagData.tagstitle}</h1>
-      <PostCard data={postsData} />
+      {/* <PostCard data={postsData} /> */}
     </div>
   )
 }

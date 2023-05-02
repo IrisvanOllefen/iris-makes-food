@@ -1,5 +1,7 @@
 import { request } from '../lib/datocms'
+import SearchComponent from './_components/search-component'
 import AboutMe from './_components/about-me'
+import TopCategories from './_components/top-categories'
 import NewestPostsCollection from './_components/newest-posts-collection'
 
 
@@ -56,7 +58,9 @@ export default async function Page() {
   const data = await getPosts()
     return (
       <div>
+        <SearchComponent />
         <NewestPostsCollection data={data}/>
+        <TopCategories data={data} />
         <AboutMe data={data} />
       </div>
     )
